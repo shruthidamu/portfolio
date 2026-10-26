@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-homepage',
+  imports: [RouterLink],
+  templateUrl: './homepage.component.html',
+  styleUrl: './homepage.component.scss'
+})
+export class HomepageComponent {
+  readonly technologies = [
+    'Angular',
+    'React',
+    'TypeScript',
+    'JavaScript',
+    'HTML5',
+    'SCSS',
+  ];
+}
