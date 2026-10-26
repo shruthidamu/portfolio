@@ -39,7 +39,7 @@ jobs:
       - name: Upload build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/YOUR_ANGULAR_PROJECT_NAME/browser
+          path: dist/shruthi-portfolio/browser
 
   deploy:
     needs: build
