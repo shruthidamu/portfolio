@@ -34,7 +34,8 @@
 }
 
 .experience-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 14px;
 }
 
@@ -64,11 +65,12 @@
 }
 
 .company-icon {
-  display: grid;
+  display: flex;
   width: 46px;
   height: 46px;
   flex: 0 0 46px;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background: #284b7a;
   color: #dceaff;
@@ -77,8 +79,9 @@
 }
 
 .company-info {
-  display: grid;
+  display: flex;
   flex: 1;
+  flex-direction: column;
   gap: 5px;
   min-width: 0;
 }
@@ -139,7 +142,8 @@
 }
 
 .card-details ul {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   padding-left: 20px;
   color: #aebdd0;

@@ -82,13 +82,14 @@
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 22px;
 }
 
 .project-card {
   display: flex;
+  flex: 0 1 calc((100% - 22px) / 2);
   min-width: 0;
   flex-direction: column;
   padding: 27px;
@@ -190,7 +191,8 @@
   }
 
   ul {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 11px;
     margin: 0;
     padding: 0;
@@ -265,11 +267,12 @@
   background: #11131d;
 
   .note-icon {
-    display: grid;
+    display: flex;
     flex: 0 0 40px;
     width: 40px;
     height: 40px;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
     border-radius: 12px;
     background: rgba(167, 139, 250, 0.12);
     color: #c4b5fd;
@@ -296,10 +299,11 @@
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .project-card {
+    flex-basis: auto;
     padding: 22px;
   }
 

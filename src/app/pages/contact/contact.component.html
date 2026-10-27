@@ -1,1 +1,98 @@
-<p>contact works!</p>
+<section class="contact-page">
+  <header class="contact-heading">
+    <p class="eyebrow">LET'S CONNECT</p>
+
+    <h1>
+      Have an opportunity?
+      <span>Let's talk.</span>
+    </h1>
+
+    <p class="intro">
+      I'm interested in opportunities where I can contribute my
+      frontend engineering experience, collaborate with talented
+      teams, and continue building useful, maintainable products.
+      If my background aligns with what you're looking for,
+      I'd be happy to connect.
+    </p>
+  </header>
+
+  <div class="contact-layout">
+    <section class="contact-main">
+      <p class="section-label">GET IN TOUCH</p>
+      <h2>Start a conversation.</h2>
+
+      <p class="contact-description">
+        Whether you're hiring for a frontend engineering role,
+        looking for someone who can bridge design and development,
+        or interested in discussing a technical opportunity,
+        feel free to reach out.
+      </p>
+
+      <a
+        class="email-card"
+        [href]="'mailto:' + email"
+      >
+        <span class="contact-icon" aria-hidden="true">✉</span>
+
+        <span class="email-content">
+          <span class="field-label">EMAIL ME</span>
+          <span class="email-address">{{ email }}</span>
+        </span>
+
+        <span class="external-icon" aria-hidden="true">↗</span>
+      </a>
+
+      <div class="social-links">
+        <a
+          [href]="linkedInUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn <span aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          [href]="githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <aside class="opportunity-card">
+      <p class="section-label">AREAS OF INTEREST</p>
+      <h2>Where I can contribute</h2>
+
+      <ul>
+        <li>
+          <span class="bullet"></span>
+          Senior Frontend Developer
+        </li>
+        <li>
+          <span class="bullet"></span>
+          Angular / React Engineering
+        </li>
+        <li>
+          <span class="bullet"></span>
+          UI Modernisation & Development
+        </li>
+        <li>
+          <span class="bullet"></span>
+          Technical Mentoring & Knowledge Sharing
+        </li>
+      </ul>
+
+      <div class="availability-note">
+        <span class="availability-dot"></span>
+        Open to relevant opportunities
+      </div>
+    </aside>
+  </div>
+
+  <footer class="contact-footer">
+    <p>Thanks for visiting my portfolio.</p>
+    <p>I'm always happy to connect over meaningful work and ideas.</p>
+  </footer>
+</section>

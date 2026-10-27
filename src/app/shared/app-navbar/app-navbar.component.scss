@@ -39,10 +39,11 @@ a:hover, a.active { color: #f3f7fd; }
 }
 
 .brand-mark {
-  display: grid;
+  display: flex;
   width: 38px;
   height: 38px;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #8ebcff55;
   border-radius: 12px;
   background: linear-gradient(145deg, #8ebcff2b, #8ebcff08);
