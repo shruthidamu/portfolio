@@ -1,1 +1,69 @@
-<p>experiences works!</p>
+
+<section class="experience-page">
+  <header class="page-header">
+    <p class="eyebrow">MY JOURNEY</p>
+    <h1>Professional Experience</h1>
+    <p class="intro">
+      My journey across frontend engineering, enterprise products,
+      UI modernization and technical mentoring.
+    </p>
+  </header>
+
+  <div class="experience-list">
+    @for (experience of experiences; track experience.company; let i = $index) {
+      <article class="experience-card">
+        <button
+          class="card-header"
+          type="button"
+          [attr.aria-expanded]="experience.expanded"
+          [attr.aria-controls]="'experience-details-' + i"
+          (click)="toggleExperience(i)"
+        >
+          <span class="company-icon" aria-hidden="true">
+            {{ experience.initial }}
+          </span>
+
+          <span class="company-info">
+            <span class="company-name">{{ experience.company }}</span>
+            <span class="role">
+              {{ experience.role }} · {{ experience.location }}
+            </span>
+            <span class="period">{{ experience.period }}</span>
+          </span>
+
+          <span
+            class="chevron"
+            [class.rotated]="experience.expanded"
+            aria-hidden="true"
+          >⌄</span>
+        </button>
+
+        @if (experience.expanded) {
+          <div class="card-details" [id]="'experience-details-' + i">
+            <div class="technology-list">
+              @for (technology of experience.technologies; track technology) {
+                <span class="technology-chip">{{ technology }}</span>
+              }
+            </div>
+
+            <h2>Key contributions</h2>
+            <ul>
+              @for (highlight of experience.highlights; track highlight) {
+                <li>{{ highlight }}</li>
+              }
+            </ul>
+
+            @if (experience.projects?.length) {
+              <h2>Featured projects</h2>
+              <div class="project-list">
+                @for (project of experience.projects; track project) {
+                  <span class="project-chip">{{ project }}</span>
+                }
+              </div>
+            }
+          </div>
+        }
+      </article>
+    }
+  </div>
+</section>
