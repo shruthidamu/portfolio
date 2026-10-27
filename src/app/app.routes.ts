@@ -17,6 +17,11 @@ export const routes: Routes = [
     title: 'Experience',
   },
   {
+    path: 'publications',
+    loadComponent: () => import('./pages/publications/publications.component').then((m) => m.PublicationsComponent),
+    title: 'Publications',
+  },
+  {
     path: 'about',
     loadComponent: () => import('./pages/about/about.component').then((m) => m.AboutComponent),
     title: 'About',
