@@ -1,1 +1,114 @@
-<p>projects works!</p>
+<section class="projects-page">
+  <div class="page-heading">
+    <p class="eyebrow">SELECTED WORK</p>
+
+    <h1>
+      Projects that bring
+      <span>ideas to life.</span>
+    </h1>
+
+    <p class="intro">
+      A selection of hands-on projects and professional case studies
+      showcasing my experience in frontend engineering, enterprise
+      applications, UI modernisation, and technical collaboration.
+    </p>
+  </div>
+
+  <div class="project-filters" aria-label="Filter projects">
+    @for (filter of filters; track filter) {
+      <button
+        type="button"
+        [class.active]="activeFilter === filter"
+        [attr.aria-pressed]="activeFilter === filter"
+        (click)="setFilter(filter)"
+      >
+        {{ filter }}
+      </button>
+    }
+  </div>
+
+  <div class="projects-grid">
+    @for (project of visibleProjects; track project.title) {
+      <article
+        class="project-card"
+        [class.featured]="project.featured"
+      >
+        <div class="card-top">
+          <span class="project-category">
+            {{ project.category }}
+          </span>
+
+          <span class="project-number">
+            {{ projects.indexOf(project) + 1 | number: '2.0' }}
+          </span>
+        </div>
+
+        <div class="project-content">
+          <h2>{{ project.title }}</h2>
+          <p class="project-summary">{{ project.summary }}</p>
+
+          <div class="technology-list">
+            @for (technology of project.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+          </div>
+
+          <div class="highlights">
+            <h3>Key contributions</h3>
+
+            <ul>
+              @for (highlight of project.highlights; track highlight) {
+                <li>{{ highlight }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          @if (project.demoUrl) {
+            <a
+              class="project-link primary-link"
+              [href]="project.demoUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View live project
+              <span aria-hidden="true">↗</span>
+            </a>
+          }
+
+          @if (project.sourceUrl) {
+            <a
+              class="project-link"
+              [href]="project.sourceUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source code
+              <span aria-hidden="true">↗</span>
+            </a>
+          }
+
+          @if (!project.demoUrl && !project.sourceUrl) {
+            <span class="case-study-note">
+              Professional experience
+            </span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+
+  <section class="projects-note">
+    <span class="note-icon" aria-hidden="true">✳</span>
+
+    <div>
+      <h2>Engineering is more than writing code.</h2>
+      <p>
+        My approach combines implementation, maintainable UI architecture,
+        design collaboration, code reviews, technical guidance, and helping
+        teams deliver reliable user experiences.
+      </p>
+    </div>
+  </section>
+</section>
